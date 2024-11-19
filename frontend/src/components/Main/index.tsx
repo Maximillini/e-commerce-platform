@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { ProductList } from "../Product/List"
 
 type Product = {
   title: string,
@@ -31,17 +32,7 @@ export const Main = () => {
     {loading ? <div>loading...</div> :
       <div className="">
         <h1 className="">Products:</h1>
-        <ul>
-          {products.map((product: Product) => {
-            return (
-            <li>
-              <img src={product.image_url} alt={product.description}/>
-              <div>{product.title}</div>
-              <div>{product.price}</div>
-            </li>
-            )
-          })}
-        </ul>
+        <ProductList products={products} />
       </div>
     }
     </>
