@@ -30,8 +30,8 @@ function App() {
   return (
     <>
     {loading ? <div>loading...</div> :
-      <>
-        <h1>Products:</h1>
+      <div>
+        <h1 className="bg-blue-500">Products:</h1>
         <ul>
           {products.map((product: Product) => {
             return (
@@ -43,7 +43,7 @@ function App() {
             )
           })}
         </ul>
-      </>
+      </div>
     }
     </>
   )
