@@ -12,7 +12,8 @@ type Product = {
 function App() {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
-
+  
+  // TODO: move to custom hook and add error handling
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch('http://localhost:3000/products')
