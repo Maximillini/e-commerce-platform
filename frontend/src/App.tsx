@@ -12,7 +12,8 @@ type Product = {
 function App() {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
-
+  
+  // TODO: move to custom hook and add error handling
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch('http://localhost:3000/products')
@@ -29,8 +30,8 @@ function App() {
   return (
     <>
     {loading ? <div>loading...</div> :
-      <>
-        <h1>Products:</h1>
+      <div>
+        <h1 className="bg-blue-500">Products:</h1>
         <ul>
           {products.map((product: Product) => {
             return (
@@ -42,7 +43,7 @@ function App() {
             )
           })}
         </ul>
-      </>
+      </div>
     }
     </>
   )
