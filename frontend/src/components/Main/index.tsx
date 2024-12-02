@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { ProductList } from "../Product/List"
+import { WithLoading } from "../shared/WithLoading"
 
 type Product = {
   title: string,
@@ -32,7 +33,9 @@ export const Main = () => {
     {loading ? <div>loading...</div> :
       <div className="">
         <h1 className="">Products:</h1>
-        <ProductList products={products} />
+        <WithLoading isLoading={loading}>
+          <ProductList products={products} />
+        </WithLoading>
       </div>
     }
     </>
